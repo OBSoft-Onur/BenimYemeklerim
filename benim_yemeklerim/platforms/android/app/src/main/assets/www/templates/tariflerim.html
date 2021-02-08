@@ -1,0 +1,31 @@
+<ion-view view-title="Tariflerim">
+  <ion-content>
+
+    <div class="list card story-line" ng-repeat="recipes in allRecipesOfLocalUserArray">
+      <div class="item item-avatar" style="background-color: whitesmoke;">
+        <img src="{{user_photo}}">
+        <ion-icon class="trash" name="trash" size="large" ng-click="deleteMyFood({{recipes.ID}})"></ion-icon>
+        <h2>{{username}}</h2>
+        <p>{{recipes.PUBLISHED_DATE}}</p>
+      </div>
+
+        <div>
+          <img class="full-image" src="{{recipes.FOOD_PHOTO}}">
+        </div>
+      <div class="item item-divider story-divider">
+        <h2>{{recipes.FOOD_NAME}}</h2>
+        <button class="button button-clear button-assertive">
+          Paylaş
+          <i class="icon ion-share"></i>
+        </button>
+        <button class="button button-clear button-assertive">
+          Favori
+          <i class="icon ion-bookmark"></i>
+        </button>
+      </div>
+
+    </div>
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,14 @@
+<ion-view view-title="Kategoriler">
+  <ion-content ng-controller="PlaylistsCtrl" scrollbar-x="false" overflow-scroll="true" has-bouncing="true">
+
+      <a class="card category-card" ng-repeat="kategori in foodArray" href="#/app/category_detail/{{kategori.CATEGORY_NAME}}">
+        <div class="item item-image item-text-wrap">
+          <img style="max-width: 100%; max-height: 100%;" src="{{kategori.CATEGORY_IMAGE}}" alt="">
+          <div class="item item-divider category-divider">
+            {{kategori.CATEGORY_NAME}}
+          </div>
+        </div>
+      </a>
+
+  </ion-content>
+</ion-view>

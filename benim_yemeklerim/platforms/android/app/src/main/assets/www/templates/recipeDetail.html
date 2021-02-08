@@ -1,0 +1,55 @@
+<ion-view view-title="Yemekler">
+  <ion-content ng-controller="DetailPagesCtrl">
+
+
+    <div class="card">
+
+      <img class="full-image" src="{{tempClassicRecDetailJson.FOOD_PHOTO}}">
+
+      <div class="recipe-name">
+        <span>{{tempClassicRecDetailJson.FOOD_NAME}}</span>
+      </div>
+
+      <div class="recipe-details">
+        <div class="list list-inset recipe-detail-list">
+          <div class="item item-divider">
+            Malzemeler
+          </div>
+          <div class="item">
+            <div class="list-item" ng-repeat="ing in tempClassicRecDetailJson.INGREDIANTS">
+              {{ing.INGREDIANT_UNIT_QTY}} {{ing.INGREDIANT_UNIT}} {{ing.INGREDIANT_NAME}}
+            </div>
+          </div>
+          <div class="item item-divider">
+            Hazırlık Bilgisi
+          </div>
+          <div class="item">
+            Hazırlama Süresi:
+            <p>{{tempClassicRecDetailJson.FOOD_PREPERATION_TIME}}</p>
+          </div>
+          <div class="item">
+            Pişirme Süresi:
+            <p>{{tempClassicRecDetailJson.FOOD_COOKING_TIME}}</p>
+          </div>
+          <div class="item">
+            Porsiyon:
+            <p>{{tempClassicRecDetailJson.PORTION_QTY}} {{tempClassicRecDetailJson.PORTION_UNIT}}</p>
+          </div>
+          <div class="item item-divider">
+            Tarif
+          </div>
+          <div class="item item-text-wrap">
+            {{tempClassicRecDetailJson.FOOD_RECIPE}}
+          </div>
+      </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </ion-content>
+</ion-view>

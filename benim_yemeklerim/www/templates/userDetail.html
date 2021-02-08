@@ -1,0 +1,56 @@
+<ion-view view-title="Kullanıcı Profili">
+  <ion-nav-buttons side="right">
+
+  </ion-nav-buttons>
+  <ion-content>
+
+      <div class="profile-main-container">
+          <div class="profile-avatar-container">
+              <span class="user-name-container">{{tempUserDetailPageData.USERNAME}}</span>
+              <img id="profile-avatar" src="{{tempUserDetailPageData.USER_PHOTO}}" alt="">
+
+
+              <div class="profile-info-container">
+                <div class="follow-button">
+                    <button class="button  button-assertive" ng-click="follow({{tempUserDetailPageData.LOGIN_ID}})"
+                                          ng-show="followButtonIsVisible">
+                        Takip
+                      </button>
+                      <button class="button button-outline button-assertive" ng-click="unfollow({{tempUserDetailPageData.LOGIN_ID}})"
+                                          ng-show="unfollowButtonIsVisible">
+                        Takipten Çıkar
+                      </button>
+                  </div>
+                  <ul class="profile-info-section">
+                      <li class="block-profile-text">
+                          <span class="p-number-detail">{{tempUserDetailPageData.POST_COUNT}}</span>
+                          <span class="p-text-detail">Tarif</span>
+                      </li>
+                      <li class="block-profile-text">
+                          <span class="p-number-detail">{{tempUserDetailPageData.USER_FOLLOWING + followingCounter}}</span>
+                          <span class="p-text-detail">Takip</span>
+                      </li>
+                      <li class="block-profile-text">
+                          <span class="p-number-detail">{{tempUserDetailPageData.USER_FOLLOWERS}}</span>
+                          <span class="p-text-detail">Takipçi</span>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="user-recipe-container">
+              <div class="row user-recipe-gallery">
+                  <div class="col col-33 item-image" ng-repeat="temp in tempUserRecipeDetailPageProfileData">
+                      <a href="#/app/tariflerim">
+                         <img src="{{temp.FOOD_PHOTO}}" alt="">
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+  </ion-content>
+</ion-view>

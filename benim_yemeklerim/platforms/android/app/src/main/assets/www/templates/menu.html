@@ -1,0 +1,62 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar-assertive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" drag-content="true"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-assertive">
+      <h1 class="title">Menü</h1>
+    </ion-header-bar>
+    <ion-content>
+      <div class="item item-avatar menu-profile-container" ng-show="profile_data_IsVisible">
+        <img src="{{user_photo}}">
+    <h2>{{username}}</h2>
+    <p>{{user_email}}</p>
+      </div>
+      <ion-list id="side-menu-list">
+        <ion-item menu-close href="#/app/playlists">
+          <img style="margin-right: 1rem;" src="img/home_16px.png" alt="">
+          Anasayfa
+        </ion-item>
+        <ion-item class="profile-item" menu-close  ng-click="goProfile()">
+          <img style="margin-right: 1rem;" src="img/customer_16px.png" alt="">
+          Profil
+        </ion-item>
+        <ion-item menu-close href="#/app/yemek-tanımla">
+          <img style="margin-right: 1rem;" src="img/plus_16px.png" alt="">
+          Yemek Tanımla
+        </ion-item>
+        <ion-item menu-close href="#/app/kategoriler">
+        <img style="max-width: 7%; max-height:7%; margin-right: 1rem;" src="../img/icons8_categorize_26px_1.png" alt="">
+          Kategoriler
+        </ion-item>
+        <ion-item menu-close href="#/app/tariflerim">
+        <img style="margin-right: 1rem;" src="../img/icons8_food_and_wine_16px.png" alt="">
+          Tariflerim
+        </ion-item>
+        <ion-item menu-close href="#/app/favoriler">
+        <img style="margin-right: 1rem;" src="../img/icons8_add_to_favorites_16px.png" alt="">
+          Favoriler
+        </ion-item>
+        <ion-item menu-close ng-click="login()" ng-show="loginButton_IsVisible">
+         <img style="margin-right: 1rem;" src="../img/icons8_enter_16px.png" alt="">
+          Kullanıcı Girişi
+        </ion-item>
+        <ion-item class="exit-item" menu-close ng-click="logout()" ng-show="logoutButton_IsVisible">
+         <img style="margin-right: 1rem;" src="../img/icons8_import_16px.png" alt="">
+          Çıkış Yap
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

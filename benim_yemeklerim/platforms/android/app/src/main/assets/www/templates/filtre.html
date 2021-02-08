@@ -1,0 +1,48 @@
+<ion-view view-title="Filtre" >
+  <!--
+    <ion-nav-buttons side="right">
+    <button class="button button-clear">Reset</button>       
+</ion-nav-buttons>
+  -->
+    <ion-content>
+
+      <div class="order-content" style="padding-top: 2em;">
+        <h2>SIRALAMA</h2>
+      </div>
+
+      <div class="order-options">
+        <ion-list>
+          <ion-radio ng-model="choice" ng-value="'A'">En Popüler Öğün</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'B'">En Çok Beğenilen</ion-radio>
+        </ion-list>
+      </div>
+
+      <div class="order-content" style="padding-top: 2em;">
+        <h2>ARAMA</h2>
+      </div>
+
+      <div class="search-options">
+        <div class="list">
+
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Kategoriler
+            </div>
+            <select>
+              <option>Etli Çorba</option>
+              <option selected>Kahvaltı</option>
+              <option>Ara Öğün</option>
+            </select>
+          </label>
+        
+        </div>
+      </div>
+      
+    </ion-content>
+    <div class="bar bar-footer" style="margin-bottom: 1em;;">
+      <button class="button button-assertive saveButton">
+        Kaydet
+      </button>
+    </div>
+  </ion-view>
+  

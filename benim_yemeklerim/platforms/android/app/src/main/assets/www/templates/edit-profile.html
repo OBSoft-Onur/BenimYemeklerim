@@ -1,0 +1,62 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Profili Düzenle</h1>
+    <div ng-click="closeProfile()" style="width: 100%; height: auto;">
+      <i class="icon ion-android-close close"></i>
+    </div>
+
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doProfileChange()">
+
+      <div class="list">
+        <div class="change-avatar">
+          <img id="user-avatar" src="{{user_photo}}" alt="">
+          <div ng-click="editProfilePhoto()">
+            <i id="change-cam-icon" class="icon ion-ios-reverse-camera-outline"></i>
+          </div>
+        </div>
+
+
+        <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-top: 5%;">
+          <img src="img/customer_16px_light.png" alt="">
+          <input type="text" ng-model="editProfileData.KullaniciAdi" placeholder="Kullanıcı Adı:"
+            style="margin-left: 2%;">
+        </label>
+
+        <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-top: 5%;">
+          <img src="img/envelope_16px.png" alt="">
+          <input type="text" ng-model="editProfileData.email" placeholder="Email:" style="margin-left: 2%;">
+        </label>
+
+
+        <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-top: 5%;">
+          <img src="img/phone_16px.png" alt="">
+          <input type="text" ng-model="editProfileData.telefon" placeholder="Telefon:" style="margin-left: 2%;">
+        </label>
+
+        <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-top: 5%;">
+          <img src="img/lock_16px.png" alt="">
+          <input type="password" ng-model="editProfileData.password" placeholder="Yeni Şifre:" style="margin-left: 2%;">
+        </label>
+
+        <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-top: 5%;">
+          <img src="img/lock_16px.png" alt="">
+          <input type="text" ng-model="editProfileData.passwordRepeat" placeholder="Şifre Tekrar:"
+            style="margin-left: 2%;">
+        </label>
+
+
+        <div class="save-button-content" style="margin-top: 10%;">
+          <button class="button button-assertive saveButton">
+            Kaydet
+          </button>
+        </div>
+
+      </div>
+
+    </form>
+
+
+  </ion-content>
+</ion-modal-view>

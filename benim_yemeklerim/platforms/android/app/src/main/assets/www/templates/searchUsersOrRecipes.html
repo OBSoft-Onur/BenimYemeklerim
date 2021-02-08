@@ -1,0 +1,55 @@
+<ion-view>
+  <div class="tabs-striped tabs-top tabs-background-assertive tabs-color-light">
+    <div class="tabs">
+      <a class="tab-item {{recipeTab_activity_ctrl}}" ng-click="showTabResults(recipe_tab)">
+        Tarif Ara
+      </a>
+      <a class="tab-item {{userTab_activity_ctrl}}" ng-click="showTabResults(user_tab)">
+        Kullanıcı Ara
+      </a>
+    </div>
+  </div>
+<ion-content ng-controller="DetailPagesCtrl" class="has-header" overflow-scroll="true" has-bouncing="true">
+
+
+
+
+  <br><br><br><br>
+
+
+  <div class="search-content" style>
+    <div class="list list-inset" style="width: 95%; border-radius: 30px;">
+    <div class="item item-input" style="border-radius: 30px;">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input id="main-input" ng-model="searchkey" type="text" ionic-input-clearable data-hideClearBtnOnBlur>
+    </div>
+  </div>
+
+  </div>
+
+
+  <!--recipes için ng-show bloğu-->
+  <div class="list">
+    <div class="item item-avatar" ng-repeat="recipesData in tempSearchRecipeJson | filter : searchkey"
+                     ng-show="recipeDatas_IsVisible" ng-click="goClassicRecipeDetailPageFromSearch({{recipesData.RECIPE_ID}})">
+      <img src="{{recipesData.FOOD_PHOTO}}">
+      <h2>{{recipesData.FOOD_NAME}}</h2>
+      <p>{{recipesData.LIKE_COUNT}} Beğeni</p>
+    </div>
+  </div>
+  <!--recipes için ng-show bloğu sonu-->
+
+<!--users için ng-show bloğu-->
+  <div class="list">
+        <div class="item item-avatar" ng-repeat="usersData in tempSearchUserJson | filter : searchkey"
+              ng-show="userDatas_IsVisible" ng-click="goOtherUsersProfile({{usersData.LOGIN_ID}},{{usersData}})">
+          <img src="{{usersData.USER_PHOTO}}">
+          <h2>{{usersData.USERNAME}}</h2>
+          <p>{{usersData.POST_COUNT}} Paylaşım Ve {{usersData.FOLLOWERS}} Takipçi</p>
+        </div>
+   </div>
+<!--user için ng-show bloğu sonu-->
+
+
+</ion-content>
+</ion-view>

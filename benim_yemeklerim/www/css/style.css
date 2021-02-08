@@ -1,0 +1,337 @@
+/* Empty. Add your own CSS if you like */
+
+body {
+	font-family: 'Balsamiq Sans', cursive;
+}
+
+*{
+	text-decoration: none;
+	font-family: 'Balsamiq Sans', cursive !important;
+}
+
+ion-item.profile-item{
+	border: none;
+}
+
+ion-item.exit-item{
+	border: none;
+}
+
+.signup-button{
+
+
+border-color: #ab0012;
+border-radius: 30px;
+margin-bottom: 5%;
+background-color: white;
+color: black;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+li {
+	display: list-item;
+}
+
+
+
+.login-button{
+
+
+	border-radius: 30px;
+	margin-bottom: 5%;
+	color: white;
+}
+
+
+.category-divider{
+	
+	top: -36px;
+	background: rgba( 171, 0, 18, 0.25 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 2px );
+	-webkit-backdrop-filter: blur( 2px );
+	border-top: none;
+	color:#fff;
+	font-size: 22px;
+
+}
+
+
+
+.main-text-header{
+	margin-top: 5%;
+}
+
+.bar .title.title-left.header-item {
+	
+	text-align: center !important;
+}
+
+h1.title.title-left{
+	text-align: center !important;
+	right: 0px !important;
+	color: #ab0012;
+}
+
+
+
+h2 {
+	margin: 1rem 1.5rem;
+	color: #ab0012;
+	font-size: 20px !important;
+}
+
+.trash{
+	float: right;
+}
+
+.close {
+	font-size: x-large;
+	float: right;
+	color: #ab0012;
+}
+
+ion-icon {
+	color: #ab0012;
+  }
+
+.recipe-name{
+	color: #ab0012;
+	font-size: x-large;
+	text-align: center;
+	margin: 4%;
+}
+
+.fav-name-design{
+	margin: 5% 0 5% 0 !important;
+}
+
+.main-next-detail{
+	vertical-align: middle;
+	text-align: center;
+	position: relative;
+	margin:0;
+  	top: 55%;
+	  left: 50%;
+	  color: #ab0012;
+  	transform: translate(-50%, -50%);
+}
+
+.story-divider{
+	color: #666666;
+	margin-top: -2%;
+	text-align: center;
+	padding: 1rem 1rem;
+	overflow: hidden;
+	text-overflow: clip;
+}
+
+.story-divider span {
+	font-size: large;
+	display: block;
+}
+
+.story-divider button {
+	margin-top: 3%;
+	width: 50%;
+}
+
+.button i {
+	margin-left: 10%;
+}
+
+
+
+.saveButton {
+	border-radius: 20px;
+	width: 200px;
+    display:block;
+    position:relative;
+    margin: auto;
+    text-align: center;
+    height: auto;
+}
+
+.addButton {
+	border-radius: 20px;
+	width: 200px;
+    display:block;
+    position:relative;
+    margin: auto;
+    text-align: center;
+    height: auto;
+}
+
+.camButtons {
+	display:block;
+    position:relative;
+    margin: auto;
+    text-align: center;
+    height: auto;
+}
+
+
+
+#camIcon {
+	margin-right: 2rem;
+}
+
+#foodPic {
+	vertical-align: middle;
+	object-fit: cover;
+	height: 300px;
+}
+
+/* .scroll-photo .scroll {
+	display: flex;
+} */
+
+.item-complex {
+	border-color: white;
+	margin-top: 3%;
+}
+
+.menu-profile-container {
+	border-color: white;
+}
+
+.menu-profile-container h2 {
+	color: #444444;
+}
+
+.profile-main-container {
+	position: fixed;
+    width: 100%;
+    height: 300px;
+	background: linear-gradient(to bottom, #ab0012 50%, white 50%);
+	display: block;
+}
+
+.profile-avatar-container {
+	text-align: center;
+	display:block;
+	position:relative;
+	height: 300px;
+}
+
+.user-recipe-container {
+	height: 100%;
+	margin-top: 30%;
+}
+
+.user-recipe-gallery {
+	max-width: 100%;
+	height: auto;
+	flex-wrap: wrap;
+}
+
+.user-recipe-gallery img {
+	width: 100%;
+	height: 100px;
+	object-fit: cover;
+}
+
+#profile-avatar {
+	vertical-align: middle;
+  	width: 100px;
+  	height: 100px;
+	border-radius: 50%;
+	border: 5px solid #fff;
+	margin: 0;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+#user-avatar {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#change-cam-icon {
+
+	position: absolute;
+	top: 110px;
+	left: 55%;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 4px solid #fff;
+	color: #ab0012;
+	font-size: 35px;
+	width: 43px;
+  
+}
+
+.change-avatar {
+	margin: 10% 0 10% 0;
+	text-align: center;
+}
+
+
+
+
+.profile-info-container {
+	display: flex;
+    justify-content: center;
+    align-items: flex-end;
+	height: 400px;
+	color: #ab0012;
+}
+
+.profile-info-section {
+	padding: 1rem 0;
+	justify-content: space-around;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	flex-direction: row;
+	width: 100%;
+	border-top: 3px solid #ab0012 ;
+	border-bottom: 3px solid #ab0012 ;
+}
+
+.follow-button {
+	position: absolute;
+	margin-bottom: 30%;
+}
+
+.follow-button button {
+	width: 200px;
+}
+
+.block-profile-text {
+	
+	vertical-align: baseline;
+	font-size: 16px;
+    text-align: center;
+	width: 33.3%;
+}
+
+.p-number-detail {
+	display: block;
+	font-weight: bolder;
+}
+
+.user-name-container {
+	text-align: center;
+	font-size: 22px;
+	color: #fff;
+	margin: 0;
+  	position: absolute;
+  	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+
+

@@ -1,0 +1,170 @@
+<ion-view view-title="Yemek Tanımla">
+  <ion-content scrollbar-x="false" overflow-scroll="true" has-bouncing="true" ng-controller="RecipeCtrl">
+
+    <div class="list card">
+      <div class="item item-image">
+        <img id="foodPic" src="{{foodPicUrl}}" alt="">
+      </div>
+    </div>
+
+    <div class="padding camButtons">
+      <img id="camIcon" ng-click="picFromCamera()" src="../img/icons8_camera_48px.png" alt="">
+      <img id="galIcon" ng-click="picFromGallery()" src="../img/icons8_gallery_48px.png" alt="">
+    </div>
+
+    <div class="list" style="margin-top: 2em;">
+      <label class="item item-input item-stacked-label" style="background-color:whitesmoke;">
+        <span class="input-label">Yemek Adı Giriniz:</span>
+        <input type="text" style="background-color: #f9f9f9; max-width: 95%; border-radius: 10px;"
+                                        ng-model="yemekAdi"   placeholder="Ör: Patlıcan Kebab, Pilav...">
+      </label>
+      <label class="item item-input item-stacked-label" style="background-color:whitesmoke;">
+        <span class="input-label">Porsiyon Miktarını Giriniz:</span>
+        <input type="text" style="background-color: #f9f9f9; max-width: 95%; border-radius: 10px;"
+                                                            ng-model="porsiyonMiktari"    placeholder="Ör: 4, 6 vb...">
+      </label>
+      <label class="item item-input item-stacked-label" style="background-color:whitesmoke;">
+        <span class="input-label">Porsiyon Birimini Giriniz:</span>
+        <input type="text" style="background-color: #f9f9f9; max-width: 95%; border-radius: 10px;"
+                                                        ng-model="porsiyonBirimi" placeholder="Ör: Tabak, Kase, Kişilik vb...">
+      </label>
+      <label class="item item-input item-stacked-label" style="background-color:whitesmoke;">
+        <span class="input-label">Hazırlama Süresini Giriniz:</span>
+        <input type="text" style="background-color: #f9f9f9; max-width: 95%; border-radius: 10px;"
+                                                            ng-model="prepTime" placeholder="Ör: 58 , 30, 45 vb...">
+      </label>
+      <label class="item item-input item-stacked-label" style="background-color:whitesmoke;">
+        <span class="input-label">Pişirme Süresini Giriniz:</span>
+        <input type="text" style="background-color: #f9f9f9; max-width: 95%; border-radius: 10px;"
+                                                    ng-model="cookTime"      placeholder="Ör: 65, 45, 90 vb...">
+      </label>
+
+      <div class="list" >
+        <label class="item item-input item-select" style="background-color: whitesmoke;">
+          <div class="input-label" >
+            Yemeğin Kategorisini Seçiniz:
+          </div>
+          <select style="background-color: whitesmoke;" ng-model="yemekKategori">
+            <option selected>Kahvaltı</option>
+            <option>Öğle Yemeği</option>
+            <option>Ara Sıcaklar</option>
+            <option>Beyaz Etler</option>
+            <option>Kırmızı Etler</option>
+            <option>Mezeler</option>
+            <option>Balıklar</option>
+            <option>Zeytinyağlılar</option>
+            <option>Burgerler</option>
+            <option>Atıştırmalıklar</option>
+            <option>Sandviçler</option>
+            <option>5 Çayı</option>
+            <option>Markanalar</option>
+            <option>Çorbalar</option>
+            <option>Geleneksel Türk Mutfağı</option>
+          </select>
+        </label>
+      </div>
+</div>
+
+  <h3 style="margin-left: 2%;">Ekleyeceginiz Malzemeleri Seçiniz:</h3>
+
+
+
+  <div class="row rowIngridient">
+
+    <div style="border:1px solid grey; height:50px; margin-left: 2%; width: 30%;">
+      <select style="width: 100%;height: 100%;" ng-model="malzemeBirimiSayisi">
+
+        <option ng-repeat="tempIngrediantQuantity in ingrediantUnitQuantity">{{tempIngrediantQuantity}}</option>
+      </select>
+    </div>
+
+    <div  style="border:1px solid grey; height:50px; margin-left: 5px; width: 30%;">
+    <select style="width: 100%;height: 100%;" ng-model="malzemeBirimi">
+      <option>g</option>
+      <option>kg</option>
+      <option>tutam</option>
+      <option>Çay Kaşığı</option>
+      <option>Çorba Kaşığı</option>
+      <option>Tatlı Kaşığı</option>
+      <option>Adet</option>
+      <option>Demet</option>
+      <option>Çay Bardağı</option>
+      <option>Su Bardağı</option>
+      <option>Kepçe</option>
+      <option>Litre</option>
+      <option>Dilim(Kalın)</option>
+      <option>Dilim(ince)</option>
+      <option>Sap</option>
+      <option>Paket</option>
+    </select>
+  </div>
+<!--
+
+  <div style="border:1px solid grey; height:50px; margin-left: 5px; border-color: #555555;" class="col col-33">
+    <input style="max-width: 100%;border-color: #555555;" type="text" placeholder="Ürün Adı:" ng-model="malzemeAdi"
+                                    ng-click="openPopover($event)">
+
+  </div>
+
+-->
+
+<div class=" col col-40">
+  <label class="item item-input" style="max-width: 100%;border-color: #555555; height: 50px;margin-top: -5px;">
+    <input style="max-width: 100%;border-color: #555555;" type="text" placeholder="Ürün Adı:" ng-model="malzemeAdi"
+                                    ng-click="openPopover($event)" >
+  </label>
+</div>
+
+</div>
+
+
+  <br>
+      <div class="row rowIngridient" style="margin-top: -5%;">
+        <button class="button button-assertive addButton" ng-click="addIngrediant(malzemeAdi,malzemeBirimi,malzemeBirimiSayisi)">
+          Ekle+
+        </button>
+      </div>
+
+
+
+<h3 style="margin-left: 2%;">Eklenen Malzemeler:</h3>
+<ion-scroll scrollbar-x="false" class="row scroll-photo" overflow-scroll="true" has-bouncing="true" direction="x">
+  <div class="row">
+    <div class="col-33 item-image"  ng-repeat="ingrediant in newTempIngrediantDataArray" style="width: 33%; margin-left: 1em;">
+
+      <div class="item item-image" style="height: 130px;">
+        <img style="width:  100%; height: 100%; object-fit: cover;" src="img/ingrediant_images/{{ingrediant.ing_image}}" alt="">
+      </div>
+      <div class="item item-divider" style="background-color: #fafafa; border-top-color: #fafafa;">
+        <p>
+          {{ingrediant.ing_name}} <br> ({{ingrediant.ing_unit_qty}}/{{ingrediant.ing_unit}})
+        </p>
+
+      </div>
+    </div>
+  </div>
+</ion-scroll>
+
+
+
+  <div class="foodDesc-content" style="margin-top: 10%;">
+    <h3 style="margin-left: 2%;">Tarifinizi Yazınız!</h3>
+    <div class="card">
+      <div class="item item-text-wrap" style="background-color: whitesmoke;">
+        <textarea placeholder="Tarifler" name="" id="tarif" cols="50" rows="10" style="background-color: whitesmoke;"
+        ng-model="tarifText">
+        </textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="save-button-content" style="margin-top: 5%;">
+      <button class="button button-assertive saveButton" ng-click="YemekTanimla(yemekAdi,porsiyonMiktari,porsiyonBirimi,prepTime,
+      cookTime,yemekKategori,tarifText)">
+        Kaydet
+      </button>
+  </div>
+
+
+  </ion-content>
+</ion-view>

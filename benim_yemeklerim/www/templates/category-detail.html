@@ -1,0 +1,63 @@
+<ion-view view-title="Kategori Detaylar">
+  <ion-content>
+
+
+      <!-- category Detail ng-show Block-->
+        <div class="list card " ng-show="category_IsVisible" >
+            <a class="item item-avatar" ng-repeat="food in foodDetayBilgi" ng-click="showRecipeDetail({{food.RECIPE_ID}})">
+              <img src="{{food.FOOD_PHOTO}}">
+              <h2>{{food.FOOD_NAME}}</h2>
+              <p>{{food.FOOD_RECIPE}}</p>
+            </a>
+        </div>
+
+
+<!-- Recipe Detail ng-show Block-->
+
+
+        <div class="card" ng-show="recipeDetail_IsVisible">
+
+          <img class="full-image" src="{{tempRecDetailArray.FOOD_PHOTO}}">
+
+          <div class="recipe-name">
+            <span>{{tempRecDetailArray.FOOD_NAME}}</span>
+          </div>
+
+          <div class="recipe-details">
+            <div class="list list-inset recipe-detail-list">
+              <div class="item item-divider">
+                Malzemeler
+              </div>
+              <div class="item">
+                <div class="list-item" ng-repeat="ingrs in tempRecDetailArrayIngrediantsJson.INGREDIANTS">
+                  {{ingrs.INGREDIANT_UNIT_QTY}} {{ingrs.INGREDIANT_UNIT}} {{ingrs.INGREDIANT_NAME}}
+                </div>
+              </div>
+              <div class="item item-divider">
+                Hazırlık Bilgisi
+              </div>
+              <div class="item">
+                Hazırlama Süresi:
+                <p>{{tempRecDetailArray.FOOD_PREPERATION_TIME}}</p>
+              </div>
+              <div class="item">
+                Pişirme Süresi:
+                <p>{{tempRecDetailArray.FOOD_COOKING_TIME}}</p>
+              </div>
+              <div class="item item-divider">
+                Tarif
+              </div>
+              <div class="item item-text-wrap">
+                {{tempRecDetailArray.FOOD_RECIPE}}
+              </div>
+          </div>
+          </div>
+
+        </div>
+
+
+        <button class="button button-block button-assertive" ng-click="showBackCategoryDetails()" ng-show="backButton_IsVisible">Geri</button>
+
+    </ion-content>
+  </ion-view>
+

@@ -1,0 +1,44 @@
+<ion-view view-title="Profil">
+    <ion-nav-buttons side="right">
+       <img src="img/pencil_32px.png" alt="" ng-click="goEditProfile()">
+    </ion-nav-buttons>
+    <ion-content ng-controller="AppCtrl">
+
+        <div class="profile-main-container">
+            <div class="profile-avatar-container">
+                <span class="user-name-container">{{username}}</span>
+                <img id="profile-avatar" src="{{user_photo}}" alt="">
+                <div class="profile-info-container">
+                    <ul class="profile-info-section">
+                        <li class="block-profile-text">
+                            <span class="p-number-detail">{{user_postCount}}</span>
+                            <span class="p-text-detail">Tarif</span>
+                        </li>
+                        <li class="block-profile-text"  ng-click="goFollowing()">
+                            <span class="p-number-detail">{{user_following}}</span>
+                            <span class="p-text-detail">Takip</span>
+                        </li>
+                        <li class="block-profile-text"  ng-click="goFollowers()">
+                            <span class="p-number-detail">{{user_followers}}</span>
+                            <span class="p-text-detail">Takipçi</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="user-recipe-container">
+                <div class="row user-recipe-gallery">
+                    <div class="col col-33 item-image" ng-repeat="recipe in allRecipesOfLocalUserArray">
+                        <div ng-click="goClassicRecipeDetailPage({{recipe}})">
+                           <img src="{{recipe.FOOD_PHOTO}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </ion-content>
+  </ion-view>

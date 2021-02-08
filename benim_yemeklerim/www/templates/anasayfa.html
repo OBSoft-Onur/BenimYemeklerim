@@ -1,0 +1,101 @@
+<ion-view view-title="Anasayfa">
+        <ion-nav-buttons side="right">
+             <i class="ion-ios-search" style="font-size: 32px;"  ng-click="goSearch()"></i> <!-- adding icon right side -->
+        </ion-nav-buttons>
+  <ion-content ng-controller="AppCtrl" class="has-header" overflow-scroll="true" has-bouncing="true">
+
+    <ion-refresher pulling-text="Yenilemek için Kaydır..." on-refresh="doRefresh()"></ion-refresher>
+
+
+    <div class="main-text-header">
+      <h2>En Çok Beğenilen Tarifler</h2>
+    </div>
+
+    <ion-scroll scrollbar-x="false" class="row scroll-photo" overflow-scroll="true" has-bouncing="true" direction="x">
+      <div class="row">
+        <div class="col-33 item-image"  ng-repeat="bestRecipes in mostLikedRecipesArray" style="width: 33%; margin-left: 1em;"
+                                                            ng-click="goMostLikedRecipeDetailFromHomePage({{bestRecipes}})">
+
+          <div class="item item-image" style="height: 100px;">
+            <img style="width:  100%;
+            height: 100%;
+            object-fit: cover;"src="{{bestRecipes.FOOD_PHOTO}}" alt="">
+          </div>
+          <div class="item item-divider" style="background-color: #fafafa; border-top-color: #fafafa;">
+            <p>
+              {{bestRecipes.FOOD_NAME}}
+            </p>
+
+          </div>
+        </div>
+        <div class="col-33" style="width: 33%; margin-left: 1em; border: 1px solid #e2e2e2;" ng-click="seeMoreLikedRecipes()">
+          <div class="main-next-detail">
+            <label>Daha fazlasını gör...</label>
+            <img src="../img/icons8_forward_button_24px.png" alt="">
+          </div>
+        </div>
+      </div>
+    </ion-scroll>
+
+
+      <h2>Geleneksel Türk Mutfağı</h2>
+
+    <ion-scroll scrollbar-x="false" class="row scroll-photo" overflow-scroll="true" has-bouncing="true" direction="x">
+      <div class="row">
+        <div class="col-33 item-image"  ng-repeat="trad_recipes in tradRecipesArray" style="width: 33%; margin-left: 1em;"
+                                                        ng-click="goTradRecipeDetailFromHomePage({{trad_recipes}})"                    >
+
+          <div class="item item-image" style="height: 100px;">
+            <img style="width:  100%;
+            height: 100%;
+            object-fit: cover;"src="{{trad_recipes.FOOD_PHOTO}}" alt="">
+          </div>
+          <div class="item item-divider" style="background-color: #fafafa; border-top-color: #fafafa;">
+            <p>
+              {{trad_recipes.FOOD_NAME}}
+            </p>
+
+          </div>
+        </div>
+        <div class="col-33" style="width: 33%; margin-left: 1em; border: 1px solid #e2e2e2;" ng-click="seeMoreTradRecipe()">
+          <div class="main-next-detail">
+            <label>Daha fazlasını gör...</label>
+            <img src="../img/icons8_forward_button_24px.png" alt="">
+          </div>
+        </div>
+      </div>
+    </ion-scroll>
+
+
+      <h2>Güncel Yemekler</h2>
+
+<div class="list card story-line"  ng-repeat="recipe in allRecipes">
+
+  <div class="item item-avatar" style="background-color: whitesmoke;" ng-click="goOtherUsersProfile({{recipe.LOGIN_ID}},{{recipe}})">
+          <img src="{{recipe.USER_PHOTO}}">
+          <h2 style="font-size: 20px;">{{recipe.USERNAME}}</h2>
+          <p>{{recipe.PUBLISHED_DATE}}</p>
+  </div>
+      <div ng-click="goClassicRecipeDetailPage({{recipe}})">
+        <div>
+          <img class="full-image" src="{{recipe.FOOD_PHOTO}}">
+        </div>
+      </div>
+
+      <div class="item item-divider story-divider">
+        <span style="color: #ab0012;">{{recipe.FOOD_NAME}}</span>
+        <button class="button button-clear button-assertive">
+          Paylaş
+          <i class="icon ion-share"></i>
+        </button>
+        <button class="button button-clear button-assertive" ng-click="addToFavorites(recipe.RECIPE_ID,recipe.FOOD_NAME)">
+          Favori
+          <i class="icon ion-bookmark"></i>
+        </button>
+      </div>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

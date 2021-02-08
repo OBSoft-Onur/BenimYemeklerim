@@ -1,0 +1,22 @@
+<ion-popover-view style="margin-top: -12%;">
+  <ion-content>
+
+    <div class="list list-inset" style="border: 2px solid grey; border-radius: 30px;">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Malzeme Ara:" ng-model="malzemeAdiFilter">
+      </label>
+    </div>
+
+
+    <ul class="list">
+      <li class="item">
+        <div class="item item-avatar" ng-repeat="ingData in ingrediantsArray | filter:malzemeAdiFilter" ng-click="chooseIngrediant(ingData.INGREDIANT_NAME)">
+          <img src="../img/ingrediant_images/{{ingData.INGREDIANT_IMAGE}}" alt="">
+          <label>{{ingData.INGREDIANT_NAME}}</label>
+        </div>
+      </li>
+    </ul>
+
+  </ion-content>
+</ion-popover-view>

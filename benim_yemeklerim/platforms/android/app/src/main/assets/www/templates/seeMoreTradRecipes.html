@@ -1,0 +1,42 @@
+<ion-view view-title="Geleneksel Tarifler">
+  <ion-content ng-controller="DetailPagesCtrl">
+
+
+    <div class="list card story-line"  ng-repeat="recipe in tempAllMoreTradRecipesJson">
+
+
+
+      <div class="item item-avatar" style="background-color: whitesmoke;" ng-click="goOtherUsersProfile({{recipe.LOGIN_ID}},{{recipe}})">
+              <img src="{{recipe.USER_PHOTO}}">
+              <h2 style="font-size: 20px;">{{recipe.USERNAME}}</h2>
+              <p>{{recipe.PUBLISHED_DATE}} - Heybeliada,İstanbul</p>
+      </div>
+
+              <div>
+                <img class="full-image" src="{{recipe.FOOD_PHOTO}}">
+              </div>
+            <div class="item item-divider story-divider">
+              <span style="color: #ab0012;">{{recipe.FOOD_NAME}}</span>
+              <button class="button button-clear button-assertive" ng-click="likeRecipe({{recipe.RECIPE_ID}})">
+                Beğen
+                <i class="{{likeIcon}}"></i>
+              </button>
+              <button class="button button-clear button-assertive">
+                Paylaş
+                <i class="icon ion-share"></i>
+              </button>
+              <button class="button button-clear button-assertive" ng-click="addToFavorites(recipe.RECIPE_ID,recipe.FOOD_NAME)">
+                Favori
+                <i class="icon ion-bookmark"></i>
+              </button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+  </ion-content>
+</ion-view>

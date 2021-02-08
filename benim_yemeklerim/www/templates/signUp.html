@@ -1,0 +1,49 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Üye Ol</h1>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSignUp()">
+
+      <div class="list">
+        <img src="img/logo.png" alt="" style="width: 75%; height: 100%; margin-left: 12.5%;margin-top: 10%;margin-bottom: 5%;">  
+      <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-bottom: 5%;">
+          <img src="img/customer_16px_light.png" alt="">
+          <input type="text" placeholder="Ad & Soyad:" ng-model="signUpData.Username">
+        </label>
+       <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-bottom: 5%;" >
+         <img src="img/envelope_16px.png" alt="">
+         <input type="text" placeholder="Email:" ng-model="signUpData.Email">
+        </label>
+        <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-bottom: 5%;" >
+         <img src="img/lock_16px.png" alt="">
+         <input type="password" placeholder="Şifre:" ng-model="signUpData.Password">
+        </label>
+        <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-bottom: 5%;" >
+         <img src="img/lock_16px.png" alt="">
+         <input type="password" placeholder="Şifre Tekrar:" ng-model="signUpData.PasswordRepeat">
+        </label>
+        <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-bottom: 5%;" >
+         <img src="img/phone_16px.png" alt="">
+         <input type="text" placeholder="Telefon:" ng-model="signUpData.Phone">
+        </label>
+        <label class="item">
+          <button class="button button-block button-assertive login-button" type="submit" ng-disabled="(!signUpData)">
+            Üye Ol
+          </button>
+        </label>
+      </div>
+    
+    </form>
+    <form >
+      <div class="list">
+        <label class="item">
+          <button class="button button-block signup-button" ng-click="goBackLogin()">
+            Geri
+          </button>
+        </label>
+      </div>
+    </form>
+    
+  </ion-content>
+</ion-modal-view>

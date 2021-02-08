@@ -1,0 +1,25 @@
+<ion-view view-title="Favoriler">
+  <ion-content>
+
+
+
+    <div class="list card" ng-repeat="favorites in favRecArray">
+      <div class="item item-avatar" style="background-color: whitesmoke;" >
+        <img src="{{favorites.PHOTO}}">
+          <ion-icon class="trash" name="trash" size="large" ng-click="removeFromFavorites({{favorites.RECIPES_ID}})"></ion-icon>
+
+        <h2>{{favorites.USERNAME}}</h2>
+        <p>Pişirme Süresi: {{favorites.FOOD_COOKING_TIME}}</p>
+      </div>
+
+        <div ng-click="goClassicRecipeDetailPage({{favorites}})">
+          <img class="full-image" src="{{favorites.FOOD_PHOTO}}">
+        </div>
+      <div class="item item-divider" style="margin-top: -2%; text-align: center;">
+        <h2 class="fav-name-design">{{favorites.FAV_RECIPE_NAME}} Tarifi </h2>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

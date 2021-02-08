@@ -1,0 +1,55 @@
+<ion-view view-title="Yemekler">
+  <ion-content ng-controller="UserDetailCtrl">
+
+
+    <div class="card">
+
+      <img class="full-image" src="{{tempMostLikedRecipesArray.FOOD_PHOTO}}">
+
+      <div class="recipe-name">
+        <span>{{tempMostLikedRecipesArray.FOOD_NAME}}</span>
+      </div>
+
+      <div class="recipe-details">
+        <div class="list list-inset recipe-detail-list">
+          <div class="item item-divider">
+            Malzemeler
+          </div>
+          <div class="item">
+            <div class="list-item" ng-repeat="ing in tempMostLikedRecipesArray.INGREDIANTS">
+              {{ing.INGREDIANT_UNIT_QTY}} {{ing.INGREDIANT_UNIT}} {{ing.INGREDIANT_NAME}}
+            </div>
+          </div>
+          <div class="item item-divider">
+            Hazırlık Bilgisi
+          </div>
+          <div class="item">
+            Hazırlama Süresi:
+            <p>{{tempMostLikedRecipesArray.FOOD_PREPERATION_TIME}}</p>
+          </div>
+          <div class="item">
+            Pişirme Süresi:
+            <p>{{tempMostLikedRecipesArray.FOOD_COOKING_TIME}}</p>
+          </div>
+          <div class="item">
+            Porsiyon:
+            <p>{{tempTradRecipesArray.PORTION_QTY}} {{tempTradRecipesArray.PORTION_UNIT}}</p>
+          </div>
+          <div class="item item-divider">
+            Tarif
+          </div>
+          <div class="item item-text-wrap">
+            {{tempMostLikedRecipesArray.FOOD_RECIPE}}
+          </div>
+      </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </ion-content>
+</ion-view>

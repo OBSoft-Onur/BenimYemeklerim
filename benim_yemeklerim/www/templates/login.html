@@ -1,0 +1,65 @@
+<ion-modal-view>
+  <ion-header-bar style="background-color: rgb(171,0,18);">
+    <h1 class="title" style="text-align: center; color: white;">Giriş Yap</h1>
+
+  </ion-header-bar>
+  <ion-content>
+
+    <!-- <form>
+      <div class="list">
+          <label class="item" style="border: 0px; border-color: white;">
+            <button class="button icon-right ion-chevron-right button-assertive" style="float: right;" ng-click="closeLogin()">
+              Giriş Yapmadan Devam Et
+            </button>
+          </label>
+      </div>
+    </form> -->
+
+    <form ng-submit="doLogin()">
+
+      <div class="list">
+        <img src="img/logo.png" alt="" style="width: 75%; height: 100%; margin-left: 12.5%;margin-top: 10%;margin-bottom: 5%;">
+      <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-bottom: 5%;">
+          <img src="img/envelope_16px.png" alt="">
+          <input type="text" ng-model="loginData.Email" placeholder="Email:" style="margin-left: 2%;">
+        </label>
+       <label class="item item-input" style="width: 75%;margin-left: 12.5%; border-radius: 30px; margin-bottom: 5%;">
+          <img src="img/lock_16px.png" alt="">
+          <input type="password" ng-model="loginData.Password" placeholder="Şifre:" style="margin-left: 2%;">
+        </label>
+        <label class="item">
+          <button class="button button-block button-assertive login-button" type="submit">Giriş Yap</button>
+        </label>
+      </div>
+
+    </form>
+    <form>
+      <div class="list">
+      <label class="item ">
+
+        <button class="button button-block  signup-button"  ng-click="closeLogin()">Üye Olmadan Devam Et</button>
+
+      </label>
+    </div>
+  </form>
+  <form>
+    <form>
+        <div class="list">
+        <label class="item ">
+
+          <button class="button button-block  signup-button"  ng-click="signUp()">Üye Ol</button>
+
+        </label>
+      </div>
+    </form>
+    <form>
+      <div class="list">
+        <label class="item">
+          <button class="button button-block  signup-button"  ng-click="forgottenPassword()">Şifremi Unuttum?</button>
+        </label>
+      </div>
+    </form>
+
+
+  </ion-content>
+</ion-modal-view>
